@@ -1,0 +1,39 @@
+.cbw {
+  // Msg Item
+  &-msg {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30%;
+    margin-top: 25px;
+
+    &__header {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    &__header-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: var(--color-active);
+      position: absolute;
+      left: -10px;
+      bottom: -10px;
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+    }
+
+    &__text {
+      border-radius: 8px;
+      padding: 5px;
+      background: var(--color-input);
+      margin-bottom: 10px;
+      color: var(--text-color-secondary);
+    }
+  }
+}

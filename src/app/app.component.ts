@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ChatBotWidgetComponent } from './chat-bot-widget/chat-bot-widget.component';
+import { ChatBotWidgetModule } from './chat-bot-widget/chat-bot-widget.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ChatBotWidgetComponent],
+  imports: [ChatBotWidgetModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

@@ -1,0 +1,16 @@
+.cbw {
+  // User MSG
+  &-user-msg {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 30%;
+  }
+
+  &-user-msg__item {
+    border-radius: 8px;
+    padding: 5px 10px;
+    background: var(--color-active);
+    margin-bottom: 10px;
+    color: var(--text-color-secondary);
+  }
+}
