@@ -5,7 +5,7 @@ import {
   Input,
   OnDestroy,
 } from '@angular/core';
-import { Subject, debounce, debounceTime, takeUntil } from 'rxjs';
+import { Subject, debounceTime, takeUntil } from 'rxjs';
 
 @Directive({
   selector: '[cbwAutoScroll]',
@@ -22,6 +22,7 @@ export class AutoScrollDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
+    // Use debounceTime for scroll because typing navigation can work too fast.
     this.scrolling$$
       .pipe(debounceTime(100), takeUntil(this.destroy$))
       .subscribe(() =>
@@ -30,6 +31,11 @@ export class AutoScrollDirective implements AfterViewInit, OnDestroy {
           block: 'end',
         })
       );
+
+    this.addListeners();
+  }
+
+  private addListeners(): void {
     this.contentContainerEl = this.el.nativeElement.querySelector(
       this.cbwContentSelector
     );
@@ -42,7 +48,6 @@ export class AutoScrollDirective implements AfterViewInit, OnDestroy {
     const parentHeight = (this.el.nativeElement as HTMLElement).offsetHeight;
     this.resizeObservable = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        // each entry is an instance of ResizeObserverEntry
         const contentHeight = entry.contentRect.height;
         if (contentHeight > parentHeight) {
           this.scrollToBottom();
@@ -54,7 +59,6 @@ export class AutoScrollDirective implements AfterViewInit, OnDestroy {
 
   private scrollToBottom(): void {
     this.scrolling$$.next();
-    // el.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
   ngOnDestroy(): void {

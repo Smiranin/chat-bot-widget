@@ -25,7 +25,6 @@ export class TypedAnimationDirective implements AfterViewInit, OnDestroy {
     this.typedInstance = new Typed(this.el.nativeElement, {
       strings: [this.text],
       typeSpeed: 15,
-      loop: false,
       showCursor: false,
       onComplete: () => this.typingCompleted.emit(),
     });

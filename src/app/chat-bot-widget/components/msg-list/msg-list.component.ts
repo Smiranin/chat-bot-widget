@@ -3,9 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  OnInit,
   Output,
-  SimpleChange,
 } from '@angular/core';
 
 @Component({

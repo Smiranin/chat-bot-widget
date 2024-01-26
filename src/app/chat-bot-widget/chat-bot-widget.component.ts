@@ -10,6 +10,8 @@ export class ChatBotWidgetComponent {
   @ViewChild(SessionsListComponent)
   sessionsListRef!: SessionsListComponent;
 
+  title = 'ByteBuddy';
+
   resetChat(): void {
     this.sessionsListRef.resetSessions();
   }
