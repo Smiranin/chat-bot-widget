@@ -1,5 +1,10 @@
 .cbw {
   // User MSG
+
+  &-chat {
+    padding: 12px 24px;
+  }
+
   &-user-msg {
     display: flex;
     justify-content: flex-end;
@@ -9,8 +14,9 @@
   &-user-msg__item {
     border-radius: 8px;
     padding: 5px 10px;
-    background: var(--color-active);
+    background: var(--bg-user-msg);
     margin-bottom: 10px;
-    color: var(--text-color-secondary);
+    color: var(--text-color-primary);
+    text-transform: capitalize;
   }
 }

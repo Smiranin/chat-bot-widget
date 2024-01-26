@@ -7,14 +7,14 @@
     right: 10px;
     bottom: 10px;
     width: 400px;
-    background: var(--color-secondary);
-    border: var(--color-border);
-    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    background: var(--bg-primary);
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
+    overflow: hidden;
   }
 
   &-container {
-    max-height: 100svh;
-    min-height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,11 +26,11 @@
     justify-content: space-between;
     align-items: center;
     height: $header-height;
-    background: var(--color-primary);
-    color: var(--text-color-secondary);
+    background: var(--bg-title);
     padding-left: 12px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    color: var(--text-color-primary);
 
     &__title {
       display: flex;
@@ -46,14 +46,17 @@
       display: flex;
       align-items: center;
     }
+
+    .cbw-icon-box img {
+      fill: red;
+    }
   }
 
   // Body
   &-body {
-    padding: 12px 24px;
     flex: 1;
     overflow: auto;
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--border-color);
   }
 
   // Footer
@@ -63,5 +66,7 @@
     padding: 20px;
     height: $footer-height;
     resize: none;
+    color: var(--text-color-secondary);
+    outline: none;
   }
 }

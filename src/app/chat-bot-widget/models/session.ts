@@ -4,6 +4,7 @@ export interface Session {
   messages: string[];
   prompts: Prompt[];
   activePrompt?: Prompt;
+  allMessagesShown?: boolean;
 }
 
 export interface Prompt {

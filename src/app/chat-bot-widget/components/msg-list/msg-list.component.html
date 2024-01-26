@@ -1,0 +1,15 @@
+<ul class="cbw-msg">
+  <li class="cbw-msg__header">
+    <div class="cbw-msg__header-icon">
+      <img src="assets/icons/robot.svg" alt="Bot logo" />
+    </div>
+    <span>{{ date | date : "medium" }}</span>
+  </li>
+  @for (msg of activeMessages; track $index) {
+  <li
+    [cbwTypedAnimation]="msg"
+    (typingCompleted)="runNextAnimation()"
+    class="cbw-msg__text"
+  ></li>
+  }
+</ul>

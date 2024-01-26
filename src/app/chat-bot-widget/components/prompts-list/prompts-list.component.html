@@ -1,7 +1,7 @@
 <ul class="cbw-prompts">
   @for (item of prompts; track item.id) {
   <li class="cbw-prompts__item">
-    <button>{{ item.title }}</button>
+    <button (click)="selectPrompt(item)">{{ item.title }}</button>
   </li>
   }
 </ul>

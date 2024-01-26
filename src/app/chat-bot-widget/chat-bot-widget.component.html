@@ -13,17 +13,14 @@
         <div class="cbw-header__title-text">Bot Name</div>
       </div>
       <div class="cbw-header__actions">
-        <button class="btn-icon">
+        <button class="btn-icon" (click)="resetChat()">
           <span class="material-icons">refresh</span>
-        </button>
-        <button class="btn-icon">
-          <span class="material-icons">close</span>
         </button>
       </div>
     </div>
 
-    <div class="cbw-body">
-      <cbw-session></cbw-session>
+    <div class="cbw-body" cbwAutoScroll cbwContentSelector=".cbw-chat">
+      <cbw-sessions-list></cbw-sessions-list>
     </div>
 
     <div class="cbw-footer">

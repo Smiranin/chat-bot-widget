@@ -3,3 +3,8 @@
 @import "./styles/base";
 @import "./styles/utilities";
 @import "./styles/components";
+
+body {
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: var(--text-color-title);
+}

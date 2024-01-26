@@ -1,0 +1,20 @@
+<ul class="cbw-chat">
+  @for (session of sessions; track session.date) {
+  <li class="cbw-chat__item">
+    <cbw-msg-list
+      [messages]="session.messages"
+      (allMessagesShown)="showPrompts()"
+    ></cbw-msg-list>
+    @if(session.activePrompt) {
+    <ul class="cbw-user-msg">
+      <li class="cbw-user-msg__item">{{ session.activePrompt.title }}</li>
+    </ul>
+    } @else if(session.allMessagesShown) {
+    <cbw-prompts-list
+      [prompts]="session.prompts"
+      (selected)="selectPrompt($event)"
+    ></cbw-prompts-list>
+    }
+  </li>
+  }
+</ul>
